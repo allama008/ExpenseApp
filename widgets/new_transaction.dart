@@ -52,15 +52,11 @@ class _NewTransactionState extends State<NewTransaction> {
           children: [
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
-              /*onChanged: (val) {
-                        titleInput = val;
-                      },*/
               controller: _titleController,
               onSubmitted: (_) => _submitData(),
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Amount'),
-              //onChanged: (val) => amountInput = val,
               controller: _amountController,
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               onSubmitted: (_) => _submitData(),
@@ -85,14 +81,6 @@ class _NewTransactionState extends State<NewTransaction> {
               ),
             ),
             RaisedButton(
-              //FlatButton( //Replaced with RaisedButton
-              /*() {
-                  /*print(titleInput);
-                  print(amountInput);*/
-                  /*print(titleController.text);
-                  print(amountController.text);*/
-                  
-                },*/
               child: Text('Add Transaction'),
               color: Theme.of(context).primaryColor,
               textColor: Theme.of(context).textTheme.button.color,

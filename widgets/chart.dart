@@ -19,8 +19,6 @@ class Chart extends StatelessWidget {
             recentTransactions[i].date.year == weekDay.year)
           totalSum += recentTransactions[i].amount;
       }
-      /*print(DateFormat.E().format(weekDay));
-      print(totalSum);*/
       return {
         'day': DateFormat.E().format(weekDay).substring(0, 1),
         'amount': totalSum
@@ -44,9 +42,7 @@ class Chart extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: /*<Widget>[],*/ groupedTransactionValues.map((data) {
-            //return Text(data['day'] + ': ' + data['amount'].toString());
-            //return Text('${data['day']}: ${data['amount']}');  //Replacing it with ChartBar widget
+          children: groupedTransactionValues.map((data) {
             return Flexible(
               fit: FlexFit.tight,
               child: ChartBar(

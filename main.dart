@@ -3,7 +3,6 @@ import 'package:ExpensesApp/widgets/transaction_list.dart';
 import './widgets/chart.dart';
 import 'package:flutter/material.dart';
 import './models/transaction.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,8 +41,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  /*String titleInput;
-  String amountInput;*/
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -52,12 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
 
-  final List<Transaction> _userTransactions = [
-    /* Transaction(
-        id: 't1', title: 'New Shoes', amount: 69.99, date: DateTime.now()),
-    Transaction(
-        id: 't2', title: 'Groceries', amount: 16.53, date: DateTime.now()) */
-  ];
+  final List<Transaction> _userTransactions = [];
 
   bool _showChart = false;
 
@@ -75,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final newTx = Transaction(
         title: txTitle,
         amount: txAmount,
-        date: txDate, //DateTime.now(),
+        date: txDate,
         id: DateTime.now().toString());
     setState(() {
       _userTransactions.add(newTx);
@@ -86,7 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
     showModalBottomSheet(
         context: ctx,
         builder: (_) {
-          //return NewTransaction(_addTransaction);
           return GestureDetector(
             onTap: () {},
             child: NewTransaction(_addTransaction),
@@ -125,7 +116,6 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (isLandscape)
