@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'package:ExpensesApp/widgets/new_transaction.dart';
-import 'package:ExpensesApp/widgets/transaction_list.dart';
+import 'package:expenses_app/widgets/new_transaction.dart';
+import 'package:expenses_app/widgets/transaction_list.dart';
 import './widgets/chart.dart';
 import './models/transaction.dart';
 
